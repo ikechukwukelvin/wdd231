@@ -1,0 +1,60 @@
+{
+  "members": [
+    {
+      "name": "Riverbend Coffee Co.",
+      "address": "123 Bean St, Riverbend",
+      "phone": "(555) 101-2020",
+      "website": "https://riverbendcoffee.com",
+      "image": "coffee.png",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Valley Tech",
+      "address": "456 Innovation Blvd",
+      "phone": "(555) 302-3030",
+      "website": "https://valleytech.io",
+      "image": "valleytech.png",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Smith Law Group",
+      "address": "789 Justice Ave",
+      "phone": "(555) 404-5050",
+      "website": "https://smithlaw.com",
+      "image": "law.png",
+      "membershipLevel": "Member"
+    },
+    {
+      "name": "Green Earth Landscaping",
+      "address": "101 Garden Way",
+      "phone": "(555) 606-7070",
+      "website": "https://greenearth.com",
+      "image": "landscaping.png",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Main Street Diner",
+      "address": "111 Main St",
+      "phone": "(555) 808-9090",
+      "website": "https://mainstreetdiner.com",
+      "image": "diner.png",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Healthy Life Clinic",
+      "address": "202 Wellness Rd",
+      "phone": "(555) 303-4040",
+      "website": "https://healthylifeclinic.org",
+      "image": "clinic.png",
+      "membershipLevel": "Member"
+    },
+    {
+      "name": "Book Nook",
+      "address": "303 Book Blvd",
+      "phone": "(555) 101-1111",
+      "website": "https://booknookstore.com",
+      "image": "bookstore.png",
+      "membershipLevel": "Gold"
+    }
+  ]
+}
