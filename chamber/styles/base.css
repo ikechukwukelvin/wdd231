@@ -1,93 +1,107 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Colors and Fonts */
+:root {
+  --primary: #0A3D62;
+  --secondary: #FFC312;
+  --text: #2F3542;
+  --bg: #ffffff;
+  --font-headings: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Header */
 header {
-  background: #004466;
+  background: var(--primary);
   color: white;
   padding: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav {
-  background: #00334d;
+header .logo {
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-nav button {
+nav ul {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.directory-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#menu-toggle {
   background: none;
   border: none;
   color: white;
   font-size: 1.5rem;
-  padding: 1rem;
-  cursor: pointer;
 }
 
-nav ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: #00334d;
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--secondary);
+  color: var(--primary);
 }
 
-nav ul.show {
-  display: flex;
-  flex-direction: column;
-}
-
-nav ul li a {
-  display: block;
-  padding: 1rem;
+.hero .cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--primary);
   color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
   text-decoration: none;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  background: #005580;
-}
-
-.view-toggle {
-  text-align: center;
-  margin: 1rem;
-}
-
-.view-toggle button {
-  margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
-}
-
-#directory.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+/* Highlights */
+.highlights, .directory-preview {
   padding: 1rem;
 }
 
-#directory.list {
-  display: block;
-  padding: 1rem;
-}
-
-.card {
-  background: #f9f9f9;
+.business-card {
   border: 1px solid #ddd;
   padding: 1rem;
-  text-align: center;
+  margin: 0.5rem 0;
   border-radius: 5px;
+  background: #f9f9f9;
 }
 
-.card img {
-  max-width: 100%;
-  height: auto;
-}
-
+/* Footer */
 footer {
-  background: #004466;
-  color: white;
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
+  background: var(--primary);
+  color: white;
 }

@@ -27,15 +27,16 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <!-- JS -->
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
   </head>
   <body>
     <header>
       <div class="logo">Riverbend Chamber of Commerce</div>
       <nav>
         <ul id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html" class="active">Directory</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
           <li><a href="join.html">join</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="events.html">Events</a></li>
@@ -46,16 +47,29 @@
 
     <main>
       <section class="hero">
-        <h1>Welcome to the Riverbend Chamber of Commerce</h1>
-        <p>Connecting businesses, promoting growth, and building a stronger Riverbend.</p>
-        <a href="membership.html" class="cta-btn">Join Now</a>
+        <img src="images/hero.jpg" alt="City skyline" class="hero-img">
+        <div class="hero-overlay">
+            <h1>Welcome to Riverbend Chamber of Commerce</h1>
+            <a href="join.html" class="cta-btn">Join the Chamber</a>
+        </div>
       </section>
-
-      <div class="view-toggle">
-        <button id="grid-view" aria-label="Grid View">🔲 Grid</button>
-        <button id="list-view" aria-label="List View">📄 List</button>
-      </div>
-      <section id="directory" class="grid"></section>
+      <section class="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>🌐 Networking Breakfast – Sept 25</li>
+            <li>💼 Business Expo – Oct 12</li>
+            <li>🎄 Holiday Market – Dec 3</li>
+        </ul>
+      </section>
+      <section class="weather">
+        <h2>Local Weather</h2>
+        <div id="current-weather"></div>
+        <div id="forecast"></div>
+      </section>
+      <section class="spotlight">
+        <h2>Member Spotlights</h2>
+        <div id="spotlight-container"></div>
+      </section>
     </main>
 
     <footer>
