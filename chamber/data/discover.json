@@ -1,0 +1,13 @@
+
+{
+  "items": [
+    {"id":1,"title":"Riverside Park","address":"123 River Rd","description":"A scenic park along the river with walking trails and picnic areas.","image":"images/item1.webp"},
+    {"id":2,"title":"Old Town Market","address":"45 Market St","description":"Weekly farmers market featuring local produce and crafts.","image":"images/item2.webp"},
+    {"id":3,"title":"Heritage Museum","address":"9 Museum Ln","description":"Local history exhibits and rotating gallery shows.","image":"images/item3.webp"},
+    {"id":4,"title":"Main Street Cafe","address":"110 Main St","description":"Community-favorite coffee shop with live music on weekends.","image":"images/item4.webp"},
+    {"id":5,"title":"Lakeview Trail","address":"Lakeview Pkwy","description":"A pleasant trail around the lake popular with walkers and cyclists.","image":"images/item5.webp"},
+    {"id":6,"title":"TechWorks Hub","address":"200 Innovation Dr","description":"Co-working and startup support for local entrepreneurs.","image":"images/item6.webp"},
+    {"id":7,"title":"Greenhouse Garden","address":"78 Plant Ave","description":"Community garden and nursery offering workshops.","image":"images/item7.webp"},
+    {"id":8,"title":"Artisan Alley","address":"7 Artisan Row","description":"Small shops and studios showcasing handmade goods.","image":"images/item8.webp"}
+  ]
+}

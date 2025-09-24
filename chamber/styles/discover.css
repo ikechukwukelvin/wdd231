@@ -1,0 +1,63 @@
+/* Minimal embedded stylesheet so the page works if you open discover.html directly.
+       You can move these rules into your existing styles.css. */
+    :root{--bg:#ffffff;--text:#0b1a2b;--accent:#0b72b9;--muted:#586b7d}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.4;color:var(--text);margin:0;background:var(--bg)}
+    header,footer{padding:1rem;background:#f6f9fb}
+    header h1{margin:0;font-size:1.25rem}
+    nav ul{display:flex;gap:0.75rem;list-style:none;padding:0;margin:0}
+    nav a{color:var(--accent);text-decoration:none}
+    main{display:grid;grid-template-columns:1fr;gap:1rem;padding:1rem}
+
+    /* Layout using named grid areas */
+    .discover-grid{display:grid;gap:1rem}
+    /* small screens: single column */
+    .discover-grid{grid-template-areas:
+      "hero"
+      "content"
+      "sidebar";
+      grid-template-columns:1fr;
+    }
+
+    .hero{grid-area:hero;padding:1rem;border-radius:8px;background:#eef6fb}
+    .content{grid-area:content}
+    .sidebar{grid-area:sidebar;padding:1rem;border-radius:8px;background:#f6f8fa}
+
+    /* Cards grid inside content */
+    .cards{display:grid;gap:1rem}
+    .card{background:#fff;border:1px solid #e6eef5;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+    .card figure{margin:0}
+    .card img{width:100%;height:200px;object-fit:cover;display:block}
+    .card .card-body{padding:0.75rem;flex:1;display:flex;flex-direction:column}
+    .card h2{font-size:1.05rem;margin:0 0 0.25rem}
+    .card address{font-style:normal;color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem}
+    .card p{flex:1;margin:0 0 0.5rem}
+    .card .btn{align-self:flex-start;padding:0.4rem 0.6rem;border-radius:6px;border:0;background:var(--accent);color:white;text-decoration:none}
+
+    /* Image hover effect — only apply on wider viewports via media query */
+    @media(min-width:1025px){
+      .card img{transition:transform 300ms ease, filter 300ms ease}
+      .card:hover img{transform:scale(1.06);filter:brightness(0.95)}
+    }
+
+    /* medium screens: two-column layout; named grid areas adjusted */
+    @media(min-width:641px) and (max-width:1024px){
+      .discover-grid{grid-template-columns:1fr 320px;grid-template-areas:
+        "hero sidebar"
+        "content sidebar";
+      }
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+
+    /* large screens: 3-column content area using named grid areas */
+    @media(min-width:1025px){
+      main{padding:2rem}
+      .discover-grid{grid-template-columns:1fr 360px;grid-template-areas:
+        "hero sidebar"
+        "content sidebar";
+      }
+      .cards{grid-template-columns:repeat(3,1fr)}
+    }
+
+    /* Accessibility helpers */
+    .sr-only{position:absolute;border:0;padding:0;width:1px;height:1px;margin:-1px;clip:rect(0 0 0 0);overflow:hidden}

@@ -8,7 +8,7 @@
     <meta name="author" content="Ikechukwu Kelvin Chichi">
 
     <!-- Favicon -->
-    <link rel="icon" href="chamber/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph Meta for Facebook -->
     <meta property="og:title" content="Riverbend Chamber of Commerce Directory">
@@ -27,17 +27,17 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <!-- JS -->
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="logo">Riverbend Chamber of Commerce</div>
+      <h1>Riverbend Chamber of Commerce</h1>
       <nav>
         <ul id="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html" class="active">Directory</a></li>
+          <li><a href="directory.html">Directory</a></li>
           <li><a href="join.html">join</a></li>
-          <li><a href="discover.html">Discover</a></li>
+          <li><a href="discover.html" class="active">Discover</a></li>
           <li><a href="index.html">Events</a></li>
           <li><a href="join.html">About Us</a></li>
         </ul>
@@ -45,19 +45,26 @@
     </header>
 
     <main>
-      <section class="hero">
-        <h1>Welcome to the Riverbend Chamber of Commerce</h1>
-        <p>Connecting businesses, promoting growth, and building a stronger Riverbend.</p>
-        <a href="join.html" class="cta-btn">Join Now</a>
-      </section>
+        <section class="discover-grid" aria-labelledby="discover-heading">
+            <div class="hero" role="region" aria-labelledby="discover-heading">
+                <h2 id="discover-heading">Discover Our Community</h2>
+                <p>Explore eight notable places in our area — attractions, small businesses, and community resources that make this place special.</p>
+                 <p>Connecting businesses, promoting growth, and building a stronger Riverbend.</p>
+                <a href="join.html" class="cta-btn">Join Now</a>
+            </div>
 
-      <div class="view-toggle">
-        <button id="grid-view" aria-label="Grid View">🔲 Grid</button>
-        <button id="list-view" aria-label="List View">📄 List</button>
-      </div>
-      <section id="directory" class="grid"></section>
+            <div class="content">
+                <section class="cards" id="cards" aria-live="polite">
+                <!-- Cards are injected here from JSON -->
+                </section>
+            </div>
+
+            <aside class="sidebar" id="sidebar" role="complementary" aria-label="Visitor info">
+                <h3>Visitor Message</h3>
+                <p id="visit-message">Checking your visit time...</p>
+            </aside>
+        </section>
     </main>
-
     <footer>
       <p>&copy; <span id="year"></span> Riverbend Chamber | Ikechukwu Kelvin Chichi | WDD 231</p>
       <p id="lastModified"></p>

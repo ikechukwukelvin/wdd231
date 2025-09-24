@@ -1,187 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riverbend Chamber of Commerce</title>
-    <meta name="description" content="Official business member directory for the Riverbend Chamber of Commerce." />
-    <meta name="author" content="Ikechukwu Kelvin Chichi">
-
-    <!-- Favicon -->
-    <link rel="icon" href="chamber/images/favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph Meta for Facebook -->
-    <meta property="og:title" content="Riverbend Chamber of Commerce Directory">
-    <meta property="og:description" content="Find local businesses and members of the Riverbend Chamber.">
-    <meta property="og:image" content="https://ikechukwukelvin.github.io/wdd231/chamber/images/chamber-logo.jpg">
-    <meta property="og:url" content="https://ikechukwukelvin.github.io/wdd231/chamber/join.html">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Riverbend Chamber of Commerce Directory">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <!-- JS -->
-    <script src="scripts/join.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1>Riverbend Chamber of Commerce</h1>
-      <nav>
-        <ul id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html" aria-current="page">Join</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="form-container">
-        <h2>Join the Chamber</h2>
-        <form method="get" action="thankyou.html">
-            <label>
-                First Name:
-                <input type="text" name="firstName" title="First Name" autocomplete="given-name" required>
-            </label>
-
-            <label>
-                Last Name:
-                <input type="text" name="lastName" title="Last Name" autocomplete="family-name" required>
-            </label>
-
-            <label>
-                Organization Title:
-                <input type="text" name="orgTitle" title="Organization Title"
-                autocomplete="organization-title"
-                pattern="[A-Za-z\\-\\s]{7,}">
-            </label>
-
-            <label>
-                Email:
-                <input type="email" name="email" title="Email Address" autocomplete="email" required
-                placeholder="example@email.com">
-            </label>
-
-            <label>
-                Mobile Phone:
-                <input type="tel" name="phone" title="Mobile Phone Number" autocomplete="tel" required>
-            </label>
-
-            <label>
-                Business / Organization Name:
-                <input type="text" name="organization" title="Organization Name" autocomplete="organization" required>
-            </label>
-
-            <label>
-                Membership Level:
-                <select name="membership" title="Membership Level" required>
-                    <option value="">-- Select --</option>
-                    <option value="np">NP Membership (Free for nonprofits)</option>
-                    <option value="bronze">Bronze Membership</option>
-                    <option value="silver">Silver Membership</option>
-                    <option value="gold">Gold Membership</option>
-                </select>
-            </label>
-
-            <label>
-                Organization Description:
-                <textarea name="description" title="Organization Description"></textarea>
-            </label>
-
-            <input type="hidden" id="timestamp" name="timestamp">
-
-            <button type="submit">Submit Application</button>
-        </form>
-
-        <!-- Membership Cards -->
-        <section class="membership-cards">
-            <div class="card animate">
-                <h3>NP Membership</h3>
-                <p>For nonprofit organizations – Free</p>
-                <button type="button" onclick="openModal('modal-np')">View Benefits</button>
-            </div>
-
-            <div class="card animate">
-                <h3>Bronze Membership</h3>
-                <p>Affordable entry-level membership</p>
-                <button type="button" onclick="openModal('modal-bronze')">View Benefits</button>
-            </div>
-
-            <div class="card animate">
-                <h3>Silver Membership</h3>
-                <p>Extra visibility and perks</p>
-                <button type="button" onclick="openModal('modal-silver')">View Benefits</button>
-            </div>
-
-            <div class="card animate">
-                <h3>Gold Membership</h3>
-                <p>Premium exposure and maximum benefits</p>
-                <button type="button" onclick="openModal('modal-gold')">View Benefits</button>
-            </div>
-        </section>
-
-        <!-- Modals -->
-        <div id="modal-np" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-np')">&times;</span>
-                <h3>NP Membership Benefits</h3>
-                <ul>
-                    <li>No cost</li>
-                    <li>Community support</li>
-                    <li>Basic directory listing</li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Riverbend Chamber of Commerce</title>
+        <meta name="description" content="Official business member directory for the Riverbend Chamber of Commerce." />
+        <meta name="author" content="Ikechukwu Kelvin Chichi">
+        <!-- Favicon -->
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <!-- Open Graph Meta for Facebook -->
+        <meta property="og:title" content="Riverbend Chamber of Commerce Directory">
+        <meta property="og:description" content="Find local businesses and members of the Riverbend Chamber.">
+        <meta property="og:image" content="https://ikechukwukelvin.github.io/wdd231/chamber/images/chamber-logo.jpg">
+        <meta property="og:url" content="https://ikechukwukelvin.github.io/wdd231/chamber/join.html">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Riverbend Chamber of Commerce Directory">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            <!-- CSS -->
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/base.css">
+        <!-- JS -->
+        <script src="scripts/join.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Riverbend Chamber of Commerce</h1>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="index.html">Events</a></li>
+                    <li><a href="join.html">About Us</a></li>
                 </ul>
+            </nav>
+        </header>
+        <main class="form-container">
+            <h1>Join the Chamber</h1>
+            <form method="get" action="thankyou.html">
+                <label>
+                    First Name:
+                    <input type="text" name="firstName" title="First Name" autocomplete="given-name" required>
+                </label>
+                <label>
+                    Last Name:
+                    <input type="text" name="lastName" title="Last Name" autocomplete="family-name" required>
+                </label>
+                <label>
+                    Organization Title:
+                    <input type="text" name="orgTitle" title="Organization Title"
+                    autocomplete="organization-title"
+                    pattern="[A-Za-z\\-\\s]{7,}">
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email" title="Email Address" autocomplete="email" required
+                    placeholder="example@email.com">
+                </label>
+                <label>
+                    Mobile Phone:
+                    <input type="tel" name="phone" title="Mobile Phone Number" autocomplete="tel" required>
+                </label>
+                <label>
+                    Business / Organization Name:
+                    <input type="text" name="organization" title="Organization Name" autocomplete="organization" required>
+                </label>
+                <label>
+                    Membership Level:
+                    <select name="membership" title="Membership Level" required>
+                        <option value="">-- Select --</option>
+                        <option value="np">NP Membership (Free for nonprofits)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+                <label>
+                    Organization Description:
+                    <textarea name="description" title="Organization Description"></textarea>
+                </label>
+                <input type="hidden" id="timestamp" name="timestamp">
+                <button type="submit">Submit Application</button>
+            </form>
+            <!-- Membership Cards -->
+            <section class="membership-cards">
+                <div class="card animate">
+                    <h3>NP Membership</h3>
+                    <p>For nonprofit organizations – Free</p>
+                    <button type="button" onclick="openModal('modal-np')">View Benefits</button>
+                </div>
+                <div class="card animate">
+                    <h3>Bronze Membership</h3>
+                    <p>Affordable entry-level membership</p>
+                    <button type="button" onclick="openModal('modal-bronze')">View Benefits</button>
+                </div>
+                <div class="card animate">
+                    <h3>Silver Membership</h3>
+                    <p>Extra visibility and perks</p>
+                    <button type="button" onclick="openModal('modal-silver')">View Benefits</button>
+                </div>
+                <div class="card animate">
+                    <h3>Gold Membership</h3>
+                    <p>Premium exposure and maximum benefits</p>
+                    <button type="button" onclick="openModal('modal-gold')">View Benefits</button>
+                </div>
+            </section>
+            <!-- Modals -->
+            <div id="modal-np" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-np')">&times;</span>
+                    <h3>NP Membership Benefits</h3>
+                    <ul>
+                        <li>No cost</li>
+                        <li>Community support</li>
+                        <li>Basic directory listing</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-
-        <div id="modal-bronze" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-bronze')">&times;</span>
-                <h3>Bronze Membership Benefits</h3>
-                <ul>
-                    <li>Discounted events</li>
-                    <li>Business networking</li>
-                    <li>Directory listing + logo</li>
-                </ul>
+            <div id="modal-bronze" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-bronze')">&times;</span>
+                    <h3>Bronze Membership Benefits</h3>
+                    <ul>
+                        <li>Discounted events</li>
+                        <li>Business networking</li>
+                        <li>Directory listing + logo</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div id="modal-silver" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-silver')">&times;</span>
-                <h3>Silver Membership Benefits</h3>
-                <ul>
-                    <li>Spotlight promotions</li>
-                    <li>Training & workshops</li>
-                    <li>Event sponsorships</li>
-                </ul>
+            <div id="modal-silver" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-silver')">&times;</span>
+                    <h3>Silver Membership Benefits</h3>
+                    <ul>
+                        <li>Spotlight promotions</li>
+                        <li>Training & workshops</li>
+                        <li>Event sponsorships</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-
-        <div id="modal-gold" class="modal">
-
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-gold')">&times;</span>
-                <h3>Gold Membership Benefits</h3>
-                <ul>
-                    <li>All Silver benefits</li>
-                    <li>Premium homepage exposure</li>
-                    <li>Exclusive event invitations</li>
-                </ul>
+            <div id="modal-gold" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-gold')">&times;</span>
+                    <h3>Gold Membership Benefits</h3>
+                    <ul>
+                        <li>All Silver benefits</li>
+                        <li>Premium homepage exposure</li>
+                        <li>Exclusive event invitations</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </main>
-
-    <footer>
-      <p>&copy; <span id="year"></span> Riverbend Chamber | Ikechukwu Kelvin Chichi | WDD 231</p>
-      <p id="lastModified"></p>
-      <p>Contact us: ichichi@byupathway.edu | (234) 7033725224</p>
-    </footer>
-  </body>
+        </main>
+        <footer>
+            <p>&copy; <span id="year"></span> Riverbend Chamber | Ikechukwu Kelvin Chichi | WDD 231</p>
+            <p id="lastModified"></p>
+            <p>Contact us: ichichi@byupathway.edu | (234) 7033725224</p>
+        </footer>
+    </body>
 </html>
