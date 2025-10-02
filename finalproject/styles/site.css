@@ -1,0 +1,26 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 2rem;
+    line-height: 1.6;
+    background-color: #f5f9f6;
+    color: #333;
+}
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #2c5f2d; /* Dark green */
+}
+h1 {
+    border-bottom: 3px solid #97c47c; /* Light green accent */
+    padding-bottom: 0.5rem;
+}
+section {
+    margin-bottom: 2rem;
+}
+.wireframe {
+    border: 2px dashed #97c47c;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    font-style: italic;
+    color: #2c5f2d;
+}
