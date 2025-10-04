@@ -1,63 +1,44 @@
-/* Minimal embedded stylesheet so the page works if you open discover.html directly.
-       You can move these rules into your existing styles.css. */
-    :root{--bg:#ffffff;--text:#0b1a2b;--accent:#0b72b9;--muted:#586b7d}
-    *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.4;color:var(--text);margin:0;background:var(--bg)}
-    header,footer{padding:1rem;background:#f6f9fb}
-    header h1{margin:0;font-size:1.25rem}
-    nav ul{display:flex;gap:0.75rem;list-style:none;padding:0;margin:0}
-    nav a{color:var(--accent);text-decoration:none}
-    main{display:grid;grid-template-columns:1fr;gap:1rem;padding:1rem}
+/* File: chamber/styles/discover.css */
+:root{--gap:1rem;--card-bg:#ffffff;--muted:#666;}
 
-    /* Layout using named grid areas */
-    .discover-grid{display:grid;gap:1rem}
-    /* small screens: single column */
-    .discover-grid{grid-template-areas:
-      "hero"
-      "content"
-      "sidebar";
-      grid-template-columns:1fr;
-    }
+.discover-page .hero{padding:2rem 1rem;text-align:center;background:linear-gradient(180deg,#f6f9fc 0%,#ffffff 100%)}
 
-    .hero{grid-area:hero;padding:1rem;border-radius:8px;background:#eef6fb}
-    .content{grid-area:content}
-    .sidebar{grid-area:sidebar;padding:1rem;border-radius:8px;background:#f6f8fa}
+/* Overlay modal */
+.visitor-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:1000}
+.visitor-box{background:#fff;padding:1.5rem 2rem;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.2);max-width:400px;text-align:center;position:relative}
+.visitor-box .close-btn{position:absolute;top:.5rem;right:.5rem;background:transparent;border:0;font-size:1.2rem;cursor:pointer}
 
-    /* Cards grid inside content */
-    .cards{display:grid;gap:1rem}
-    .card{background:#fff;border:1px solid #e6eef5;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
-    .card figure{margin:0}
-    .card img{width:100%;height:200px;object-fit:cover;display:block}
-    .card .card-body{padding:0.75rem;flex:1;display:flex;flex-direction:column}
-    .card h2{font-size:1.05rem;margin:0 0 0.25rem}
-    .card address{font-style:normal;color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem}
-    .card p{flex:1;margin:0 0 0.5rem}
-    .card .btn{align-self:flex-start;padding:0.4rem 0.6rem;border-radius:6px;border:0;background:var(--accent);color:white;text-decoration:none}
+.discover-grid{max-width:1200px;margin:1.5rem auto;display:grid;gap:var(--gap);padding:0 1rem 2rem}
 
-    /* Image hover effect — only apply on wider viewports via media query */
-    @media(min-width:1025px){
-      .card img{transition:transform 300ms ease, filter 300ms ease}
-      .card:hover img{transform:scale(1.06);filter:brightness(0.95)}
-    }
+.card{background:var(--card-bg);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:0;overflow:hidden;display:flex;flex-direction:column}
+.card figure{margin:0}
+.card img{width:100%;height:auto;display:block;transition:transform .35s ease,filter .35s ease}
+.card .card-content{padding:.75rem 1rem}
+.card h2{margin:0 0 .25rem;font-size:1.1rem}
+.card address{font-style:normal;color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+.card p{margin:.25rem 0 1rem;line-height:1.3}
+.card .btn{align-self:start;margin:0 0 1rem 1rem;padding:.4rem .8rem;border-radius:6px;border:1px solid #333;background:transparent;cursor:pointer}
 
-    /* medium screens: two-column layout; named grid areas adjusted */
-    @media(min-width:641px) and (max-width:1024px){
-      .discover-grid{grid-template-columns:1fr 320px;grid-template-areas:
-        "hero sidebar"
-        "content sidebar";
-      }
-      .cards{grid-template-columns:repeat(2,1fr)}
-    }
+.card:hover img{transform:scale(1.03);filter:brightness(.95)}
 
-    /* large screens: 3-column content area using named grid areas */
-    @media(min-width:1025px){
-      main{padding:2rem}
-      .discover-grid{grid-template-columns:1fr 360px;grid-template-areas:
-        "hero sidebar"
-        "content sidebar";
-      }
-      .cards{grid-template-columns:repeat(3,1fr)}
-    }
+/* Small */
+@media (max-width:640px){.discover-grid{grid-template-columns:1fr;grid-auto-rows:auto}.card img{transition:none}.card:hover img{transform:none;filter:none}}
 
-    /* Accessibility helpers */
-    .sr-only{position:absolute;border:0;padding:0;width:1px;height:1px;margin:-1px;clip:rect(0 0 0 0);overflow:hidden}
+/* Medium */
+@media (min-width:641px){
+  .discover-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;grid-template-areas:"a b" "c d" "e f" "g h"}
+  .card[data-area="a"]{grid-area:a}
+  .card[data-area="b"]{grid-area:b}
+  .card[data-area="c"]{grid-area:c}
+  .card[data-area="d"]{grid-area:d}
+  .card[data-area="e"]{grid-area:e}
+  .card[data-area="f"]{grid-area:f}
+  .card[data-area="g"]{grid-area:g}
+  .card[data-area="h"]{grid-area:h}
+}
+
+/* Large: featured layout */
+@media (min-width:1025px){
+  .discover-grid{grid-template-columns:repeat(4,1fr);grid-template-areas:"a a b c" "a a d e" "f g h e";grid-auto-rows:220px}
+  .card img{height:200px;object-fit:cover}
+}

@@ -29,3 +29,43 @@ body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;c
 .site-footer{padding:1rem;border-top:1px solid #eee;text-align:center;font-size:0.9rem;color:var(--muted)}
 .modal{max-width:700px;padding:1rem}
 button{cursor:pointer}
+
+/* Section Styling */
+section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* About Us Section */
+section:nth-of-type(7) { /* Adjust index if About Us is in a different order */
+  background-color: #e8f5e9; /* subtle green tint */
+  border-left: 6px solid #2c5f2d;
+}
+
+section:nth-of-type(7) h2 {
+  color: #2c5f2d;
+}
+
+/* Objectives Section */
+section:nth-of-type(8) { /* Adjust index if Objectives is in a different order */
+  background-color: #f0fdf4; /* lighter green tint */
+  border-left: 6px solid #97c47c;
+}
+
+section:nth-of-type(8) h2 {
+  color: #2c5f2d;
+}
+
+/* List styling for Objectives */
+section:nth-of-type(8) ul {
+  list-style-type: square;
+  margin-left: 1.5rem;
+}
+
+section:nth-of-type(8) li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}

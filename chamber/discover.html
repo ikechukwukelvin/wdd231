@@ -1,70 +1,61 @@
+<!-- File: chamber/discover.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riverbend Chamber of Commerce</title>
-    <meta name="description" content="Official business member directory for the Riverbend Chamber of Commerce." />
+    <title>Discover Riverbend — Riverbend Chamber of Commerce</title>
+    <meta name="description" content="Discover attractions, businesses and places of interest in Riverbend.">
     <meta name="author" content="Ikechukwu Kelvin Chichi">
 
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph Meta for Facebook -->
-    <meta property="og:title" content="Riverbend Chamber of Commerce Directory">
-    <meta property="og:description" content="Find local businesses and members of the Riverbend Chamber.">
-    <meta property="og:image" content="https://ikechukwukelvin.github.io/wdd231/chamber/images/chamber-logo.jpg">
-    <meta property="og:url" content="https://ikechukwukelvin.github.io/wdd231/chamber/directory.html">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Riverbend Chamber of Commerce Directory">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
-    <!-- JS -->
+    <link rel="stylesheet" href="styles/discover.css">
+    <link rel="stylesheet" href="styles/medium.css">
+
     <script src="scripts/discover.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Riverbend Chamber of Commerce</h1>
+      <div class="logo">Riverbend Chamber of Commerce</div>
       <nav>
         <ul id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">join</a></li>
+          <li><a href="join.html">Join</a></li>
           <li><a href="discover.html" class="active">Discover</a></li>
-          <li><a href="index.html">Events</a></li>
-          <li><a href="join.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-        <section class="discover-grid" aria-labelledby="discover-heading">
-            <div class="hero" role="region" aria-labelledby="discover-heading">
-                <h2 id="discover-heading">Discover Our Community</h2>
-                <p>Explore eight notable places in our area — attractions, small businesses, and community resources that make this place special.</p>
-                 <p>Connecting businesses, promoting growth, and building a stronger Riverbend.</p>
-                <a href="join.html" class="cta-btn">Join Now</a>
-            </div>
+    <main class="discover-page">
+      <section class="hero">
+        <h1>Discover Riverbend</h1>
+        <p>Explore the neighborhoods, businesses, parks and culture that make Riverbend a great place to live and work.</p>
+      </section>
 
-            <div class="content">
-                <section class="cards" id="cards" aria-live="polite">
-                <!-- Cards are injected here from JSON -->
-                </section>
-            </div>
+      <!-- Visitor overlay modal -->
+      <div id="visitor-overlay" class="visitor-overlay" role="dialog" aria-live="polite" aria-modal="true">
+        <div class="visitor-box">
+          <button id="close-visit-msg" class="close-btn" aria-label="Close">✕</button>
+          <p id="visit-text">Welcome!</p>
+        </div>
+      </div>
 
-            <aside class="sidebar" id="sidebar" role="complementary" aria-label="Visitor info">
-                <h3>Visitor Message</h3>
-                <p id="visit-message">Checking your visit time...</p>
-            </aside>
-        </section>
+      <!-- Grid of cards laid out using grid-template-areas -->
+      <section id="discover-grid" class="discover-grid" aria-label="Places of interest">
+        <!-- Cards injected here by discover.js -->
+      </section>
     </main>
+
     <footer>
       <p>&copy; <span id="year"></span> Riverbend Chamber | Ikechukwu Kelvin Chichi | WDD 231</p>
       <p id="lastModified"></p>

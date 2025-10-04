@@ -1,65 +1,53 @@
-// set footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+/* File: chamber/scripts/discover.js */
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const lm = document.lastModified || '';
+  document.getElementById('lastModified').textContent = lm ? 'Last modified: '+lm : '';
 
-    // Build cards from embedded JSON; you can replace with a fetch('data/discover.json') if you save JSON externally.
-    const jsonText = document.getElementById('discover-data').textContent;
-    const data = JSON.parse(jsonText);
-    const cards = document.getElementById('cards');
+  const GRID=document.getElementById('discover-grid');
+  const VISIT_TEXT=document.getElementById('visit-text');
+  const OVERLAY=document.getElementById('visitor-overlay');
+  const CLOSE=document.getElementById('close-visit-msg');
 
-    function makeCard(item){
-      const article = document.createElement('article');
-      article.className = 'card';
-      article.innerHTML = `
-        <figure>
-          <img src="${item.image}" alt="${item.title}" loading="lazy" width="300" height="200">
-        </figure>
-        <div class="card-body">
-          <h2>${item.title}</h2>
-          <address>${item.address}</address>
-          <p>${item.description}</p>
-          <a class="btn" href="#" data-id="${item.id}" aria-label="Learn more about ${item.title}">Learn More</a>
-        </div>
-      `;
-      return article;
-    }
+  fetch('data/discover.json').then(r=>r.json()).then(data=>buildCards(data));
 
-    data.items.forEach(it => cards.appendChild(makeCard(it)));
+  function daysBetween(a,b){const d=86400000;return Math.floor(Math.abs(a-b)/d)}
 
-    // localStorage last visit logic
-    const KEY = 'chamber-last-visit';
-    const now = Date.now();
-    const last = localStorage.getItem(KEY);
-    const msgEl = document.getElementById('visit-message');
+  try{
+    const LAST=localStorage.getItem('riverbend_last_visit');
+    const now=Date.now();
+    if(!LAST){VISIT_TEXT.textContent='Welcome! Let us know if you have any questions.'}
+    else{const diff=daysBetween(now,Number(LAST));
+      if(diff===0)VISIT_TEXT.textContent='Back so soon! Awesome!';
+      else if(diff===1)VISIT_TEXT.textContent='You last visited 1 day ago.';
+      else VISIT_TEXT.textContent=`You last visited ${diff} days ago.`}
+    localStorage.setItem('riverbend_last_visit',String(now))
+  }catch(e){VISIT_TEXT.textContent='Welcome! Let us know if you have any questions.'}
 
-    function daysBetween(ms1, ms2){
-      const msPerDay = 24*60*60*1000;
-      return Math.floor(Math.abs(ms1 - ms2)/msPerDay);
-    }
+  CLOSE.addEventListener('click',()=>OVERLAY.style.display='none');
 
-    if(!last){
-      msgEl.textContent = 'Welcome! Let us know if you have any questions.';
-    } else {
-      const diff = daysBetween(now, Number(last));
-      if(diff === 0){
-        msgEl.textContent = 'Back so soon! Awesome!';
-      } else if(diff === 1){
-        msgEl.textContent = 'You last visited 1 day ago.';
-      } else {
-        msgEl.textContent = `You last visited ${diff} days ago.`;
-      }
-    }
+  function buildCards(items){
+    const areas=['a','b','c','d','e','f','g','h'];
+    GRID.innerHTML='';
+    items.forEach((it,idx)=>{
+      const card=document.createElement('article');
+      card.className='card';
+      card.setAttribute('data-area',areas[idx]||'');
 
-    // update last visit
-    localStorage.setItem(KEY, now.toString());
+      const fig=document.createElement('figure');
+      const img=document.createElement('img');
+      img.src=it.image;img.alt=it.title;
+      fig.appendChild(img);
 
-    // Keyboard accessible Learn More: example opens an alert (you may replace with a modal or details page)
-    cards.addEventListener('click', (e) => {
-      const btn = e.target.closest('.btn');
-      if(!btn) return;
-      e.preventDefault();
-      const id = Number(btn.dataset.id);
-      const item = data.items.find(x => x.id === id);
-      if(item){
-        alert(`${item.title}\n${item.address}\n\n${item.description}`);
-      }
-    });
+      const content=document.createElement('div');content.className='card-content';
+      const h2=document.createElement('h2');h2.textContent=it.title;
+      const addr=document.createElement('address');addr.textContent=it.address;
+      const p=document.createElement('p');p.textContent=it.description;
+      const btn=document.createElement('button');btn.className='btn';btn.textContent='Learn more';
+      content.append(h2,addr,p,btn);
+
+      card.append(fig,content);
+      GRID.appendChild(card);
+    })
+  }
+})();

@@ -1,13 +1,10 @@
-
-{
-  "items": [
-    {"id":1,"title":"Riverside Park","address":"123 River Rd","description":"A scenic park along the river with walking trails and picnic areas.","image":"images/item1.webp"},
-    {"id":2,"title":"Old Town Market","address":"45 Market St","description":"Weekly farmers market featuring local produce and crafts.","image":"images/item2.webp"},
-    {"id":3,"title":"Heritage Museum","address":"9 Museum Ln","description":"Local history exhibits and rotating gallery shows.","image":"images/item3.webp"},
-    {"id":4,"title":"Main Street Cafe","address":"110 Main St","description":"Community-favorite coffee shop with live music on weekends.","image":"images/item4.webp"},
-    {"id":5,"title":"Lakeview Trail","address":"Lakeview Pkwy","description":"A pleasant trail around the lake popular with walkers and cyclists.","image":"images/item5.webp"},
-    {"id":6,"title":"TechWorks Hub","address":"200 Innovation Dr","description":"Co-working and startup support for local entrepreneurs.","image":"images/item6.webp"},
-    {"id":7,"title":"Greenhouse Garden","address":"78 Plant Ave","description":"Community garden and nursery offering workshops.","image":"images/item7.webp"},
-    {"id":8,"title":"Artisan Alley","address":"7 Artisan Row","description":"Small shops and studios showcasing handmade goods.","image":"images/item8.webp"}
-  ]
-}
+[
+  {"id": "rb-park","title": "Riverbend Central Park","address": "100 Riverside Ave, Riverbend","description": "A large park with walking trails, playgrounds, and an amphitheater for seasonal events.","image": "images/discover/park.png"},
+  {"id": "rb-museum","title": "Riverbend History Museum","address": "45 Heritage Ln, Riverbend","description": "Local exhibits that tell the story of Riverbend's founding and growth.","image": "images/discover/museum.png"},
+  {"id": "rb-riverwalk","title": "Riverwalk Promenade","address": "Riverside Prom, Riverbend","description": "Scenic walkway along the river with cafes, sculptures, and boat tours.","image": "images/discover/riverwalk.png"},
+  {"id": "rb-market","title": "Riverbend Farmers Market","address": "Market Square, Riverbend","description": "Weekly market featuring local produce, artisans, and live music.","image": "images/discover/market.png"},
+  {"id": "rb-theatre","title": "Riverbend Playhouse","address": "12 Grand St, Riverbend","description": "Community theater presenting plays, musicals and youth productions.","image": "images/discover/playhouse.png"},
+  {"id": "rb-brewery","title": "Riverbend Brewery & Taproom","address": "210 Industrial Rd, Riverbend","description": "Local craft brewery with tours, tasting flights and community events.","image": "images/discover/brewery.png"},
+  {"id": "rb-trail","title": "Oak Ridge Trail","address": "Trailhead at 3rd St, Riverbend","description": "Popular hiking and biking trail offering scenic overlooks.","image": "images/discover/trail.png"},
+  {"id": "rb-gallery","title": "Riverbend Art Gallery","address": "78 Main St, Riverbend","description": "Gallery showcasing local painters, photographers and sculptors.","image": "images/discover/gallery.png"}
+]
