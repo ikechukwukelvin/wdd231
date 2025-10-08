@@ -7,10 +7,24 @@
     <meta name="description" content="Discover hiking and biking trails in Riverbend Trails.">
     <meta name="author" content="Ikechukwu Kelvin Chichi">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/about.css">
+    <!-- Open Graph Meta for Facebook -->
+    <meta property="og:title" content="Riverbend Trails Home">
+    <meta property="og:description" content="Find hiking and biking trails in Riverbend Trails.">
+    <meta property="og:image" content="https://ikechukwukelvin.github.io/wdd231/finalproject/images/logo.svg">
+    <meta property="og:url" content="https://ikechukwukelvin.github.io/wdd231/finalproject/index.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Riverbend Trails">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/site.css">
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/about.js" defer></script>
+    <script src="scripts/index.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,7 +35,6 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="trails.html">Trails</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="about.html">About Us</a></li>
         </ul>
       </nav>
     </header>
@@ -42,7 +55,7 @@
         </div>
       </section>
         <!-- Grid of cards laid out using grid-template-areas -->
-        <section id="about-grid" class="about-grid" aria-label="Places of interest">
+        <section id="index-grid" class="index-grid" aria-label="Places of interest">
         <!-- Cards injected here by discover.js -->
         </section>
     </main>

@@ -4,12 +4,12 @@
   const lm = document.lastModified || '';
   document.getElementById('lastModified').textContent = lm ? 'Last modified: '+lm : '';
 
-  const GRID=document.getElementById('about-grid');
+  const GRID=document.getElementById('index-grid');
   const VISIT_TEXT=document.getElementById('visit-text');
   const OVERLAY=document.getElementById('visitor-overlay');
   const CLOSE=document.getElementById('close-visit-msg');
 
-  fetch('data/about.json').then(r=>r.json()).then(data=>buildCards(data));
+  fetch('data/index.json').then(r=>r.json()).then(data=>buildCards(data));
 
   function daysBetween(a,b){const d=86400000;return Math.floor(Math.abs(a-b)/d)}
 
