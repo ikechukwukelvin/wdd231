@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Riverbend Loop",
+    "length": 4.2,
+    "difficulty": "Easy",
+    "location": "North Entrance",
+    "description": "A gentle loop trail great for families with children."
+  },
+  {
+    "name": "Cedar Ridge Trail",
+    "length": 7.5,
+    "difficulty": "Moderate",
+    "location": "East Gate",
+    "description": "Scenic views with rolling hills and cedar groves."
+  },
+  {
+    "name": "Eagle Peak Ascent",
+    "length": 10.1,
+    "difficulty": "Hard",
+    "location": "West Ridge",
+    "description": "A steep climb to the highest point of the park with panoramic views."
+  },
+  {
+    "name": "Meadow Stroll",
+    "length": 2.8,
+    "difficulty": "Easy",
+    "location": "Visitor Center",
+    "description": "Flat trail through wildflower meadows, great for picnics."
+  },
+  {
+    "name": "Pine Creek Path",
+    "length": 6.3,
+    "difficulty": "Moderate",
+    "location": "South Gate",
+    "description": "Follows the creek with multiple small bridges and shaded areas."
+  },
+  {
+    "name": "Sunset Bluff Trail",
+    "length": 3.9,
+    "difficulty": "Easy",
+    "location": "Bluff Overlook",
+    "description": "Short hike to a viewpoint perfect for sunset watching."
+  },
+  {
+    "name": "Boulder Run",
+    "length": 8.7,
+    "difficulty": "Hard",
+    "location": "Rocky Pass",
+    "description": "Challenging trail with rocky terrain and boulder scrambling."
+  },
+  {
+    "name": "Maple Grove Walk",
+    "length": 2.5,
+    "difficulty": "Easy",
+    "location": "North Grove",
+    "description": "Flat, shaded walk under maple trees, ideal for fall colors."
+  },
+  {
+    "name": "Highland Ridge",
+    "length": 9.4,
+    "difficulty": "Hard",
+    "location": "South Ridge",
+    "description": "Rugged terrain with sweeping views of the valley."
+  },
+  {
+    "name": "Crystal Lake Path",
+    "length": 5.2,
+    "difficulty": "Moderate",
+    "location": "Lake Entrance",
+    "description": "Loops around the clear mountain lake, good for birdwatching."
+  },
+  {
+    "name": "Aspen Trail",
+    "length": 3.6,
+    "difficulty": "Easy",
+    "location": "Aspen Grove",
+    "description": "Gentle stroll under tall aspens with plenty of shade."
+  },
+  {
+    "name": "Canyon Run",
+    "length": 11.0,
+    "difficulty": "Hard",
+    "location": "Canyon Gate",
+    "description": "Steep canyon walls and rocky paths, suitable for experienced hikers."
+  },
+  {
+    "name": "Prairie Path",
+    "length": 4.8,
+    "difficulty": "Moderate",
+    "location": "Prairie Entrance",
+    "description": "Rolling grasslands with open skies, perfect for star gazing at night."
+  },
+  {
+    "name": "Willow Creek Trail",
+    "length": 7.2,
+    "difficulty": "Moderate",
+    "location": "Willow Gate",
+    "description": "Winding trail along willow trees with occasional creek crossings."
+  },
+  {
+    "name": "Summit Challenge",
+    "length": 12.5,
+    "difficulty": "Hard",
+    "location": "Summit Gate",
+    "description": "The longest and toughest trail leading to the park’s summit."
+  }
+]

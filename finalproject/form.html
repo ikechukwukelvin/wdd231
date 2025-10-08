@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <meta name="description" content="Contact Riverbend Trails for questions or feedback.">
+    <meta name="author" content="Ikechukwu Kelvin Chichi">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/site.css">
+    <script defer>
+      window.onload = () => {
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("output").innerHTML = `
+          <h2>Thank you for contacting us!</h2>
+          <p><strong>Name:</strong> ${params.get("name")}</p>
+          <p><strong>Email:</strong> ${params.get("email")}</p>
+          <p><strong>Message:</strong> ${params.get("message")}</p>
+        `;
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <div id="output"></div>
+      <p><a href="index.html">Back to Home</a></p>
+    </main>
+  </body>
+</html>
