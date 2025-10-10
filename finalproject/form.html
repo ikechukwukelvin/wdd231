@@ -22,12 +22,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/main.js" defer></script>
     <script defer>
       window.onload = () => {
         const params = new URLSearchParams(window.location.search);
         document.getElementById("output").innerHTML = `
           <h2>Thank you for contacting us!</h2>
           <p><strong>Name:</strong> ${params.get("name")}</p>
+          <p><strong>Phone:</strong> ${params.get("Phone")}</p>
           <p><strong>Email:</strong> ${params.get("email")}</p>
           <p><strong>Message:</strong> ${params.get("message")}</p>
         `;
@@ -35,9 +37,25 @@
     </script>
   </head>
   <body>
+    header>
+      <div class="logo">Riverbend Trails</div>
+      <nav>
+        <button id="menuToggle">☰</button>
+        <ul id="navMenu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="trails.html">Trails</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <div id="output"></div>
       <p><a href="index.html">Back to Home</a></p>
     </main>
+    <footer>
+      <p>&copy; <span id="year"></span> Riverbend Trails | Ikechukwu Kelvin Chichi | WDD 231</p>
+      <p id="lastModified"></p>
+      <p><a href="attributions.html">Attributions</a> | <a href="https://youtube.com/yourvideo" target="_blank">Project Video</a></p>
+    </footer>
   </body>
 </html>

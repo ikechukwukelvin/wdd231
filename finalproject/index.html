@@ -28,7 +28,7 @@
   </head>
   <body>
     <header>
-      <h1>Riverbend Trails</h1>
+      <div class="logo">Riverbend Trails</div>
       <nav>
         <button id="menuToggle">☰</button>
         <ul id="navMenu">
@@ -39,10 +39,27 @@
       </nav>
     </header>
     <main>
+      <h1>Welcome to Riverbend Trails</h1>
+          <p>Explore nature, hiking, and biking in Riverbend. Find detailed trail data, discover the best routes, and connect with us for updates.</p>
       <section>
-        <h2>Welcome to Riverbend Trails</h2>
-        <p>Explore nature, hiking, and biking in Riverbend. Find detailed trail data, discover the best routes, and connect with us for updates.</p>
+        <div class="slider">
+          <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <img src="images/e-bike.jpg" alt="e-bike" loading="lazy" width="800" height="400">
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+              <img src="images/index/museum.png" alt="e-bike" loading="lazy" width="800" height="400">
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+              <img src="images/index/gallery.png" alt="e-bike" loading="lazy" width="800" height="400">
+            </div>
+          </div>
+        </div>
       </section>
+      
       <section class="hero">
         <h1>Find your next walk in Riverbend</h1>
         <p>Curated trails, events, and outdoor tips for the local community.</p>
@@ -50,9 +67,7 @@
       </section>
       <section id="index-grid" class="index-grid" aria-label="Places of interest">
         <h2 id="highlights">Highlights</h2>
-        <div class="cards" id="highlights-list" aria-live="polite">
-          <!-- Dynamic content from JS -->
-        </div>
+        
       </section>
         <!-- Grid of cards laid out using grid-template-areas -->
         <section id="index-grid" class="index-grid" aria-label="Places of interest">
