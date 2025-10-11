@@ -1,6 +1,6 @@
-import { fetchTrails } from './api.js';
-import { createCard } from './ui.js';
-import { openModal, closeModal } from './modal.js';
+import { fetchTrails } from '../finalproject/scripts/api.js';
+import { createCard } from '../finalproject/scripts/ui.js';
+import { openModal, closeModal } from '../finalproject/scripts/modal.js';
 
 const yearEls = [document.getElementById('year'), document.getElementById('year2')].filter(Boolean);
 yearEls.forEach(e => e.textContent = new Date().getFullYear());
