@@ -12,6 +12,12 @@ header {
   width: 100%;
   overflow: hidden;
 }
+.logo {
+  color: green;
+}
+.cta {
+  background-color: whitesmoke;
+}
 
 .slider {
   width: 100%;
